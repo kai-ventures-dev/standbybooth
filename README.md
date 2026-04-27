@@ -1,11 +1,40 @@
-# Standby Booth — landing page
+# Standby Booth — landing page + product reference
 
-Single-page marketing site for [Standby Booth](https://standbybooth.app), a
-self-service video booth iPad app. Built as static HTML/CSS/JS, served via
-GitHub Pages.
+Single-page marketing site + a comprehensive product reference for
+[Standby Booth](https://standbybooth.app), a self-service video booth iPad
+app. Built as static HTML/CSS/JS, served via GitHub Pages.
 
 **Live:** https://kai-ventures-dev.github.io/standbybooth/  
 *(or `https://standbybooth.app` once the custom domain is configured)*
+
+---
+
+## 📖 [`docs/`](./docs/) — design & product reference
+
+The `docs/` folder is the **single source of truth** for what the product
+**is**, who it's **for**, and how it **behaves**. Structured for an AI
+design tool (Claude design / artifacts) to ingest the full picture before
+producing derivative designs.
+
+| File | What's in it |
+|---|---|
+| [00 · index](./docs/00-index.md) | Reading order + at-a-glance summary |
+| [01 · product](./docs/01-product.md) | Vision, design principles, what it is |
+| [02 · personas](./docs/02-personas.md) | Who pays, willingness-to-pay framework |
+| [03 · guest flow](./docs/03-guest-flow.md) | The 7-screen guest experience |
+| [04 · admin panel](./docs/04-admin-panel.md) | The 5 admin tabs + every setting |
+| [05 · tiers](./docs/05-tiers.md) | Free vs Pro — every gate, every cap |
+| [06 · features](./docs/06-features.md) | Full feature reference |
+| [07 · storage](./docs/07-storage.md) | Storage destinations, file format, sidecar |
+| [08 · technical](./docs/08-technical.md) | Architecture, constraints, edge cases |
+| [09 · brand](./docs/09-brand.md) | Voice, color, typography, motion |
+| [10 · copy](./docs/10-copy.md) | Every user-facing string |
+
+Read `00-index.md` first.
+
+---
+
+## 🌐 Landing page
 
 ## Stack
 
