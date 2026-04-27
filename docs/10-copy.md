@@ -88,7 +88,7 @@ The 10 comparison rows are verbatim from `05-tiers.md`.
 | Sub | We'll send the invite when build 3 is live. We read every reply. |
 | Primary CTA | Email us |
 | Secondary CTA | Copy address |
-| Email | hello@kaiventures.dev |
+| Email | markintheloop@kaiventures.tech |
 
 ### Footer
 
