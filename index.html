@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Standby Booth — A self-service video booth for events.</title>
+<meta name="description" content="An iPad becomes a self-service video booth. Set it up in sixty seconds. Walk away. Let it run." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Standby Booth — A self-service video booth for events" />
+<meta property="og:description" content="An iPad becomes a self-service video booth. Set it up in sixty seconds. Walk away. Let it run." />
+<meta property="og:image" content="og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kai-ventures-dev.github.io/standbybooth/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Theme + favicon -->
+<meta name="theme-color" content="#0E0F11" />
+<link rel="icon" type="image/png" href="assets/icon-1024.png" />
+<link rel="apple-touch-icon" href="assets/icon-1024.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/style.css" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ─────────────────────────────  TOP CHYRON  ────────────────────────────── -->
+<header class="chyron" role="banner">
+  <div class="chyron-inner">
+    <a href="#top" class="brand" aria-label="Standby Booth — home">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Standby Booth</span>
+    </a>
+    <span class="chyron-status" aria-hidden="true">
+      <span class="mono">TESTFLIGHT BETA</span>
+      <span class="mono dim">·</span>
+      <span class="mono">BUILD&nbsp;3</span>
+    </span>
+    <a class="chyron-cta mono" href="#access">Request access &rarr;</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ──────────────────────────────  HERO  ─────────────────────────────────── -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-grid">
+    <div class="hero-text">
+
+      <p class="tally" aria-label="On air indicator">
+        <span class="tally-dot" aria-hidden="true"></span>
+        <span class="mono">ON&nbsp;AIR</span>
+        <span class="mono dim">·</span>
+        <span class="mono">STANDBY&nbsp;BOOTH</span>
+      </p>
+
+      <h1 id="hero-h1" class="display">
+        Your event<br />
+        <em>records itself.</em>
+      </h1>
+
+      <p class="lede">
+        An iPad becomes a self-service video booth.
+        Set it up in sixty seconds. Walk away. Let it run.
+      </p>
+
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#access">Request TestFlight access</a>
+        <a class="btn btn-ghost" href="#flow">How it works</a>
+      </div>
+
+      <p class="hero-foot mono">
+        <span>iPadOS 17+</span>
+        <span class="dim">·</span>
+        <span>$29.99 one-time</span>
+        <span class="dim">·</span>
+        <span>No subscription</span>
+      </p>
+    </div>
+
+    <figure class="hero-art" aria-hidden="true">
+      <div class="art-frame">
+        <span class="art-corner art-corner-tl"></span>
+        <span class="art-corner art-corner-tr"></span>
+        <span class="art-corner art-corner-bl"></span>
+        <span class="art-corner art-corner-br"></span>
+        <img src="assets/icon-1024.png" alt="" class="art-icon" loading="eager" />
+        <p class="art-tc mono">REC&nbsp;00:00:42:14</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ────────────────────────────  STATS STRIP  ────────────────────────────── -->
+<section class="stats" aria-label="At a glance">
+  <ul class="stats-row mono" role="list">
+    <li><span class="stat-num">60s</span><span class="stat-label">Setup</span></li>
+    <li><span class="stat-num">1080p&nbsp;/&nbsp;4K</span><span class="stat-label">Capture</span></li>
+    <li><span class="stat-num">7</span><span class="stat-label">Guest screens</span></li>
+    <li><span class="stat-num">0</span><span class="stat-label">Servers</span></li>
+    <li><span class="stat-num">100%</span><span class="stat-label">On-device</span></li>
+  </ul>
+</section>
+
+<!-- ────────────────────────────  WHAT IT IS  ─────────────────────────────── -->
+<section class="spread" aria-labelledby="what-h2">
+  <p class="section-eyebrow mono"><span class="dim">§ 01 ·</span> The product</p>
+  <div class="spread-grid">
+    <div class="spread-display">
+      <h2 id="what-h2" class="display">
+        It's a <em>recording booth</em><br />
+        that doesn't need a person.
+      </h2>
+    </div>
+    <div class="spread-body">
+      <p>
+        Standby Booth runs entirely on the iPad. No backend.
+        No cloud. No setup beyond plugging in.
+      </p>
+      <p>
+        The host configures the event once — branding, prompts,
+        recording length, storage destination — then locks the
+        device into a kiosk and walks away.
+      </p>
+      <p>
+        The guest tap-records-reviews. Files save to Photos,
+        a local folder, a USB-C drive, or share over AirDrop
+        and QR. The host comes back to a folder full of clips.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────  FLOW  ─────────────────────────────────── -->
+<section id="flow" class="flow" aria-labelledby="flow-h2">
+  <div class="flow-head">
+    <p class="section-eyebrow mono"><span class="dim">§ 02 ·</span> Guest flow</p>
+    <h2 id="flow-h2" class="display">Seven&nbsp;screens. <em>One&nbsp;path.</em></h2>
+    <p class="flow-sub">Designed so the guest never needs instructions, and the host never needs to intervene.</p>
+  </div>
+
+  <ol class="flow-list" role="list">
+    <li class="flow-card">
+      <span class="flow-num mono">01</span>
+      <div class="flow-screen flow-screen-attract">
+        <span class="flow-label">Tap to share your story</span>
+      </div>
+      <p class="flow-name mono">Attract</p>
+    </li>
+    <li class="flow-card">
+      <span class="flow-num mono">02</span>
+      <div class="flow-screen flow-screen-script">
+        <span class="flow-mini">— or —</span>
+        <span class="flow-pill">Use a prompt</span>
+        <span class="flow-pill">Speak freely</span>
+      </div>
+      <p class="flow-name mono">Script choice</p>
+    </li>
+    <li class="flow-card">
+      <span class="flow-num mono">03</span>
+      <div class="flow-screen flow-screen-ready">
+        <span class="flow-target"></span>
+        <span class="flow-mini">Tap when ready</span>
+      </div>
+      <p class="flow-name mono">Get ready</p>
+    </li>
+    <li class="flow-card">
+      <span class="flow-num mono">04</span>
+      <div class="flow-screen flow-screen-countdown">
+        <span class="flow-count">3</span>
+      </div>
+      <p class="flow-name mono">Countdown</p>
+    </li>
+    <li class="flow-card flow-card-rec">
+      <span class="flow-num mono">05</span>
+      <div class="flow-screen flow-screen-rec">
+        <span class="flow-rec-dot" aria-hidden="true"></span>
+        <span class="flow-rec-tc mono">REC 00:42</span>
+      </div>
+      <p class="flow-name mono">Recording</p>
+    </li>
+    <li class="flow-card">
+      <span class="flow-num mono">06</span>
+      <div class="flow-screen flow-screen-preview">
+        <span class="flow-mini">Keep · Retry · Cancel</span>
+      </div>
+      <p class="flow-name mono">Preview</p>
+    </li>
+    <li class="flow-card">
+      <span class="flow-num mono">07</span>
+      <div class="flow-screen flow-screen-thanks">
+        <span class="flow-mini">Thank you.</span>
+      </div>
+      <p class="flow-name mono">Thank you</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ────────────────────────────  PRICING  ────────────────────────────────── -->
+<section class="pricing" aria-labelledby="pricing-h2">
+  <p class="section-eyebrow mono"><span class="dim">§ 03 ·</span> Free &amp; Pro</p>
+
+  <div class="pricing-head">
+    <h2 id="pricing-h2" class="display">
+      <em>$29.99.</em> Once.
+    </h2>
+    <p class="pricing-sub">
+      One-time purchase. No subscription. Yours forever.
+      Free tier covers the basics; Pro covers events you charge for.
+    </p>
+  </div>
+
+  <div class="compare" role="table" aria-label="Free vs Pro comparison">
+    <div class="compare-head" role="row">
+      <span role="columnheader" class="mono">Feature</span>
+      <span role="columnheader" class="mono">Free</span>
+      <span role="columnheader" class="mono pro">Pro</span>
+    </div>
+
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Recording length</span>
+      <span role="cell" class="cell-free">60s</span>
+      <span role="cell" class="cell-pro">Up to 5 min</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Video quality</span>
+      <span role="cell" class="cell-free">720p</span>
+      <span role="cell" class="cell-pro">Up to 4K</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Time extensions</span>
+      <span role="cell" class="cell-free dim">—</span>
+      <span role="cell" class="cell-pro">+30s × 5</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Custom branding</span>
+      <span role="cell" class="cell-free dim">—</span>
+      <span role="cell" class="cell-pro">Logo, fonts, colors</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Storage</span>
+      <span role="cell" class="cell-free">Photos library</span>
+      <span role="cell" class="cell-pro">+ Local · USB-C</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Sharing</span>
+      <span role="cell" class="cell-free">AirDrop</span>
+      <span role="cell" class="cell-pro">+ QR codes</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Prompts &amp; scripts</span>
+      <span role="cell" class="cell-free dim">—</span>
+      <span role="cell" class="cell-pro">Full teleprompter</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Analytics</span>
+      <span role="cell" class="cell-free">Count only</span>
+      <span role="cell" class="cell-pro">Full dashboard</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Presets</span>
+      <span role="cell" class="cell-free dim">—</span>
+      <span role="cell" class="cell-pro">Save / load / share</span>
+    </div>
+    <div class="compare-row" role="row">
+      <span role="cell" class="cell-label">Test mode</span>
+      <span role="cell" class="cell-free dim">—</span>
+      <span role="cell" class="cell-pro">Included</span>
+    </div>
+  </div>
+
+  <p class="compare-foot mono">
+    <span>Coming soon to Pro</span>
+    <span class="dim">·</span>
+    <span>Google Drive</span>
+    <span class="dim">·</span>
+    <span>Noise suppression</span>
+  </p>
+</section>
+
+<!-- ──────────────────────────  WHO IT'S FOR  ─────────────────────────────── -->
+<section class="audience" aria-labelledby="audience-h2">
+  <p class="section-eyebrow mono"><span class="dim">§ 04 ·</span> Built for</p>
+  <h2 id="audience-h2" class="display">People who run <em>real events.</em></h2>
+  <ul class="audience-grid" role="list">
+    <li>
+      <p class="aud-role mono">Event planners</p>
+      <p class="aud-line">Add a guest-message corner without booking a video crew. Configure once in the morning, walk away by lunch.</p>
+    </li>
+    <li>
+      <p class="aud-role mono">Wedding videographers</p>
+      <p class="aud-line">Sell it as an add-on. The iPad pays for itself by the third reception.</p>
+    </li>
+    <li>
+      <p class="aud-role mono">Brand activations</p>
+      <p class="aud-line">Branded UGC at conferences and pop-ups. Files land where you tell them — Photos, USB-C, your laptop.</p>
+    </li>
+  </ul>
+</section>
+
+<!-- ─────────────────────────────  ACCESS  ────────────────────────────────── -->
+<section id="access" class="access" aria-labelledby="access-h2">
+  <p class="tally tally-center" aria-label="On air indicator">
+    <span class="tally-dot" aria-hidden="true"></span>
+    <span class="mono">STANDBY</span>
+  </p>
+  <h2 id="access-h2" class="display">Join the <em>TestFlight</em> beta.</h2>
+  <p class="access-sub">We'll send the invite when build 3 is live. We read every reply.</p>
+
+  <div class="access-cta">
+    <a class="btn btn-primary btn-lg" href="mailto:hello@kaiventures.dev?subject=Standby%20Booth%20TestFlight%20beta&amp;body=Hi%20%E2%80%94%20I'd%20like%20early%20access%20to%20Standby%20Booth.">
+      Email&nbsp;us
+    </a>
+    <button class="btn btn-ghost btn-lg" id="copy-email" type="button" data-email="hello@kaiventures.dev">
+      <span class="copy-label">Copy address</span>
+    </button>
+  </div>
+
+  <p class="access-foot mono dim">hello@kaiventures.dev</p>
+</section>
+
+</main>
+
+<!-- ─────────────────────────────  FOOTER  ────────────────────────────────── -->
+<footer class="foot" role="contentinfo">
+  <div class="foot-inner">
+    <a href="#top" class="brand small">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Standby Booth</span>
+    </a>
+    <p class="foot-meta mono">
+      <span>© 2026 Kai Ventures</span>
+      <span class="dim">·</span>
+      <span>Made on a Mac, with care.</span>
+    </p>
+    <ul class="foot-links mono" role="list">
+      <li><a href="https://standbybooth.app/privacy">Privacy</a></li>
+      <li><a href="https://standbybooth.app/terms">Terms</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
