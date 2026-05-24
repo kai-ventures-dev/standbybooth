@@ -66,10 +66,10 @@ const App = () => (
     <Masthead />
     <Cover />
     <Ticker />
+    <InTheWild />
     <TOC />
     <Feature />
     <Gallery />
-    <InTheWild />
     <Admin />
     <Flow />
     <Price />

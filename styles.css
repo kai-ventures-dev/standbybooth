@@ -635,49 +635,53 @@ body { transition: background-color 0.25s ease, color 0.25s ease; }
 [data-theme="dark"] .theme-icon-moon { display: none; }
 
 /* =====================================================================
-   IN THE WILD — 2×2 photo grid; the 4 marketing renders.
+   IN THE WILD — compact 4-up interlude near the top.
+   Held to a tighter max-width so the photos read as thumbnail-scale
+   plates (resolution preservation) rather than hero-scale renders.
    ===================================================================== */
 .in-the-wild {
-  max-width: var(--max);
+  max-width: 1080px;       /* tighter than --max so plates stay small */
   margin: 0 auto;
-  padding: clamp(60px, 8vw, 120px) var(--gutter);
-  border-top: 1px solid var(--rule);
+  padding: clamp(36px, 5vw, 56px) var(--gutter);
+  border-bottom: 1px solid var(--rule-2);
 }
 .wild-hd {
-  font-size: clamp(40px, 6vw, 76px);
-  margin: 12px 0 16px;
-  max-width: 14ch;
+  font-size: clamp(28px, 3.6vw, 44px);
+  margin: 8px 0 10px;
+  max-width: 18ch;
 }
 .wild-deck {
-  max-width: 56ch;
+  max-width: 54ch;
+  font-size: 14px;
   color: var(--ink-2);
-  margin: 0 0 clamp(36px, 5vw, 56px);
+  margin: 0 0 clamp(20px, 3vw, 32px);
 }
 .wild-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(20px, 3vw, 36px);
+  grid-template-columns: repeat(4, 1fr); /* one row of 4 at desktop */
+  gap: clamp(14px, 1.8vw, 20px);
 }
 .wild-plate {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 .wild-plate img {
   width: 100%; height: auto;
-  border-radius: 6px;
+  border-radius: 4px;
   border: 1px solid var(--rule-2);
   background: var(--paper-2);
-  /* Each PNG has a near-white background already; in dark mode the plate
-     reads like a polaroid laid on a dark table — intentional, no filter
-     manipulation. The subtle border keeps the plate edge visible. */
 }
 .wild-plate figcaption {
+  font-size: 10px;
   padding-left: 2px;
   color: var(--ink-2);
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .wild-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
   .wild-grid { grid-template-columns: 1fr; }
 }
 
