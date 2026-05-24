@@ -85,7 +85,6 @@ const Masthead = () => (
       <span className="mast-issue">Vol. 01 · Issue 03 · Spring 2026</span>
       <span className="mast-title">Standby Booth</span>
       <div className="mast-right">
-        <a className="mast-cta" href={SUPPORT_MAILTO}>Request access →</a>
         <ThemeToggle />
       </div>
     </div>
