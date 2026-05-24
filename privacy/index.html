@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Standby Booth — Privacy Policy</title>
+<meta name="description" content="Standby Booth is a zero-backend iPad app. We don't collect, store, or transmit your data. Here's the formal version." />
+<meta name="theme-color" content="#F5F1E8" id="sb-theme-color" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Standby Booth — Privacy Policy" />
+<meta property="og:description" content="No backend, no telemetry, no analytics. The privacy story in plain language." />
+<meta property="og:image" content="../assets/hero-anywhere.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://standbybooth.com/privacy/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="../assets/icon-1024.png" />
+<link rel="apple-touch-icon" href="../assets/icon-1024.png" />
+
+<!-- Theme boot — runs BEFORE stylesheet to avoid flash-of-wrong-theme.
+     Same logic as the main page so the user's theme choice carries across. -->
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("sb-theme");
+    var theme = stored || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.dataset.theme = theme;
+    var meta = document.getElementById("sb-theme-color");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#14110D" : "#F5F1E8");
+  } catch (e) {}
+})();
+</script>
+
+<!-- Fonts (same set as the main page) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Reuse the main site's CSS variables + base typography. -->
+<link rel="stylesheet" href="../styles.css" />
+
+<style>
+/* Legal-page specific layout. Single-column prose, generous margins,
+   matches the editorial-magazine system inherited from styles.css. */
+.legal-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 96px) var(--gutter) clamp(80px, 10vw, 140px);
+}
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+.legal-back:hover { color: var(--ink); border-color: var(--rule); }
+.legal-eb {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 16px;
+}
+.legal-h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px;
+}
+.legal-h1 em { font-style: italic; }
+.legal-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+  margin: 0 0 clamp(32px, 4vw, 56px);
+}
+.legal-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0 0 clamp(36px, 5vw, 56px);
+}
+.legal-section { margin-top: clamp(32px, 4vw, 56px); }
+.legal-section h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(24px, 2.8vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+.legal-section h2 em { font-style: italic; }
+.legal-section h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  margin: 24px 0 6px;
+}
+.legal-section p,
+.legal-section li {
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--ink);
+}
+.legal-section p { margin: 0 0 14px; }
+.legal-section ul { padding-left: 22px; margin: 0 0 14px; }
+.legal-section li { margin-bottom: 6px; }
+.legal-section a { color: var(--tally); border-bottom: 1px solid var(--tally); padding-bottom: 1px; }
+.legal-section a:hover { background: var(--tally); color: var(--paper); border-bottom-color: var(--tally); }
+.legal-section code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--paper-2);
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--rule-2);
+}
+.legal-footer {
+  margin-top: clamp(56px, 7vw, 88px);
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Page-level header — minimal, just title-mark + theme toggle. */
+.legal-mast {
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+}
+.legal-mast-rule { height: 4px; background: var(--ink); }
+.legal-mast-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.legal-mast-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1;
+  color: var(--ink);
+}
+</style>
+</head>
+<body>
+
+<header class="legal-mast">
+  <div class="legal-mast-rule"></div>
+  <div class="legal-mast-inner">
+    <a class="legal-mast-title" href="../">Standby Booth</a>
+    <button type="button" class="theme-toggle" id="theme-toggle"
+            aria-label="Toggle theme">
+      <svg class="theme-icon theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="theme-icon theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="legal-mast-rule" style="height: 1px;"></div>
+</header>
+
+<main class="legal-shell">
+  <a class="legal-back" href="../">← Back to home</a>
+
+  <p class="legal-eb">Legal · Privacy</p>
+  <h1 class="legal-h1">Privacy <em>Policy.</em></h1>
+  <p class="legal-meta">
+    <span>Effective: May 24, 2026</span>
+    <span>Version: 1.0</span>
+    <span>App: Standby Booth (iPadOS)</span>
+  </p>
+
+  <p class="legal-lede">
+    Standby Booth is a zero-backend iPad app. We don't collect, store, or
+    transmit your data — because there's no place for us to send it. This
+    page formalizes that posture in plain language.
+  </p>
+
+  <section class="legal-section">
+    <h2>The <em>short version.</em></h2>
+    <p>
+      Standby Booth runs entirely on your iPad. We do not operate a server.
+      We do not run analytics SDKs. We do not embed advertising. We do not
+      collect telemetry. Recordings live on your device until you decide to
+      share them.
+    </p>
+    <p>
+      The rest of this page is the formal version — the same posture,
+      broken out into the sections a privacy review expects.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Who we are.</h2>
+    <p>
+      Standby Booth ("the app") is published by Kai Ventures. You can
+      reach a human at <a href="mailto:support@standbybooth.com">support@standbybooth.com</a>
+      with any privacy question, request, or concern.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>What we don't collect.</h2>
+    <p>To be specific about the absence of data collection:</p>
+    <ul>
+      <li>No personal information. We don't ask for your name, email, phone, address, or birthday.</li>
+      <li>No analytics. No Google Analytics, no Mixpanel, no Amplitude, no anonymous "we'd love to see how you use the app" pixels. None.</li>
+      <li>No advertising IDs. We don't read your IDFA.</li>
+      <li>No location data. The app never asks for location and never reads it.</li>
+      <li>No contacts, calendars, or reminders.</li>
+      <li>No device fingerprinting, no third-party tracking, no cross-app correlation.</li>
+      <li>No remote logging. Crash reports stay on the device unless you choose to share them with Apple via the standard iOS setting.</li>
+    </ul>
+  </section>
+
+  <section class="legal-section">
+    <h2>What the app uses on your device.</h2>
+    <p>
+      iOS asks you to grant permission for these because the app needs them
+      to function. All data they touch stays on the iPad:
+    </p>
+    <h3>Camera</h3>
+    <p>Required to record video. Video is written to your iPad's local storage. We have no access to it.</p>
+    <h3>Microphone</h3>
+    <p>Required to record audio with your video. Same locality rules.</p>
+    <h3>Photo Library</h3>
+    <p>Required only if you set "Photos library" as the storage destination in admin. The app saves recordings to your Camera Roll using Apple's standard PHPhotoLibrary API.</p>
+    <h3>Local Network</h3>
+    <p>The app declares this permission for AirDrop and peer-to-peer file transfer to nearby devices. AirDrop is system-managed by iOS; the app does not perform its own network scanning.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Storage destinations.</h2>
+    <p>
+      Standby Booth supports three storage options for guest recordings,
+      chosen by the admin in the admin panel:
+    </p>
+    <ul>
+      <li><strong>iPad local storage</strong> — recordings live in the app's sandbox. iOS reclaims them when the app is deleted.</li>
+      <li><strong>Photos library</strong> — recordings save to the Camera Roll via Apple's PHPhotoLibrary API. They are subject to your iCloud Photos settings, if enabled.</li>
+      <li><strong>USB-C external drive</strong> — recordings copy to the connected drive. The app uses iOS security-scoped bookmarks; we never see the drive contents.</li>
+    </ul>
+    <p>
+      In each case, the recording never traverses a server we operate. If
+      you AirDrop a recording to another device, AirDrop is peer-to-peer
+      over Bluetooth/WiFi between your two devices — nothing goes through us.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>In-app purchase.</h2>
+    <p>
+      Standby Booth Pro is a one-time, non-consumable in-app purchase via
+      Apple's StoreKit. Apple handles the entire payment flow. We do not
+      see your payment method, billing address, or any other identifying
+      information about you. We receive only a verified entitlement
+      receipt from Apple confirming you have purchased Pro — and that
+      receipt is stored in the iOS Keychain on your device.
+    </p>
+    <p>
+      Refunds, cross-device restoration, and family-sharing eligibility
+      are managed by Apple. Apple's privacy policy applies to the payment
+      transaction.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Required Reason APIs.</h2>
+    <p>
+      Apple requires apps to declare why they use certain on-device APIs.
+      The app's <code>PrivacyInfo.xcprivacy</code> manifest declares the
+      following, all for legitimate on-device functionality:
+    </p>
+    <ul>
+      <li><strong>UserDefaults</strong> (reason <code>CA92.1</code>) — to store the USB-C drive bookmark and the local file-naming sequence counter.</li>
+      <li><strong>File timestamp</strong> (reason <code>C617.1</code>) — to read file size attributes after writing a recording.</li>
+      <li><strong>Disk space</strong> (reason <code>E174.1</code>) — to check available space before starting a long recording, so a 5-minute take doesn't fail halfway through.</li>
+    </ul>
+    <p>None of these touch personal information; all reads stay on-device.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Third parties.</h2>
+    <p>
+      The app does not embed third-party SDKs at launch. If we add an
+      optional Google Drive storage destination in the future, signing into
+      Google Drive would trigger Google's SignIn SDK, and your interaction
+      with Google would be governed by
+      <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+      We would only receive an OAuth token, stored in your iPad's Keychain,
+      to write recordings into your own Drive folder.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Children's privacy.</h2>
+    <p>
+      Standby Booth is appropriate for users of any age, but the app
+      itself does not knowingly collect any personal information from
+      anyone — including children under 13. If you believe a child has
+      shared information through the app, please contact us at
+      <a href="mailto:support@standbybooth.com">support@standbybooth.com</a>.
+      We will respond promptly.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Your rights.</h2>
+    <p>
+      Because we do not collect personal data, there is nothing in our
+      possession to disclose, correct, port, or delete. If you have used
+      the app to record guests at an event, those recordings are on your
+      iPad — you control them entirely. You can delete them from the
+      Photos library or the Files app on your iPad at any time.
+    </p>
+    <p>
+      Residents of jurisdictions with specific data-protection rights
+      (GDPR, CCPA, others) — your rights are preserved by the fact that
+      we hold no data about you. If you have questions, email us.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Changes to this policy.</h2>
+    <p>
+      If we update this policy, the effective date at the top will change.
+      Material changes — for example, if we ever add a server-side
+      component — will be announced in the app and on the
+      <a href="../">Standby Booth home page</a> before they take effect.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Contact.</h2>
+    <p>
+      Questions, concerns, or requests:
+      <a href="mailto:support@standbybooth.com">support@standbybooth.com</a>.
+      We read every reply.
+    </p>
+  </section>
+
+  <footer class="legal-footer">
+    <span>© 2026 Kai Ventures</span>
+    <span><a href="../">Standby Booth</a></span>
+  </footer>
+</main>
+
+<script>
+// Theme toggle — vanilla JS, matches the React ThemeToggle on the main page.
+(function () {
+  var btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  var sync = function () {
+    var dark = document.documentElement.dataset.theme === "dark";
+    btn.setAttribute("aria-pressed", String(dark));
+    btn.setAttribute("title", dark ? "Light mode" : "Dark mode");
+  };
+  sync();
+  btn.addEventListener("click", function () {
+    var next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("sb-theme", next); } catch (e) {}
+    var meta = document.getElementById("sb-theme-color");
+    if (meta) meta.setAttribute("content", next === "dark" ? "#14110D" : "#F5F1E8");
+    sync();
+  });
+})();
+</script>
+</body>
+</html>
