@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Standby Booth — Terms of Use</title>
+<meta name="description" content="The terms for using Standby Booth, an iPadOS app for self-service video booths at events." />
+<meta name="theme-color" content="#F5F1E8" id="sb-theme-color" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Standby Booth — Terms of Use" />
+<meta property="og:description" content="The terms for using the Standby Booth iPadOS app." />
+<meta property="og:image" content="../assets/hero-anywhere.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://standbybooth.com/terms/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="../assets/icon-1024.png" />
+<link rel="apple-touch-icon" href="../assets/icon-1024.png" />
+
+<!-- Theme boot — runs BEFORE stylesheet to avoid flash-of-wrong-theme. -->
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("sb-theme");
+    var theme = stored || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.dataset.theme = theme;
+    var meta = document.getElementById("sb-theme-color");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#14110D" : "#F5F1E8");
+  } catch (e) {}
+})();
+</script>
+
+<!-- Fonts (same set as the main page) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Reuse the main site's CSS variables + base typography. -->
+<link rel="stylesheet" href="../styles.css" />
+
+<style>
+/* Legal-page layout — identical to /privacy/ so the two pages match. */
+.legal-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 96px) var(--gutter) clamp(80px, 10vw, 140px);
+}
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+.legal-back:hover { color: var(--ink); border-color: var(--rule); }
+.legal-eb {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 16px;
+}
+.legal-h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px;
+}
+.legal-h1 em { font-style: italic; }
+.legal-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+  margin: 0 0 clamp(32px, 4vw, 56px);
+}
+.legal-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0 0 clamp(36px, 5vw, 56px);
+}
+.legal-section { margin-top: clamp(32px, 4vw, 56px); }
+.legal-section h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(24px, 2.8vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+.legal-section h2 em { font-style: italic; }
+.legal-section h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  margin: 24px 0 6px;
+}
+.legal-section p,
+.legal-section li {
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--ink);
+}
+.legal-section p { margin: 0 0 14px; }
+.legal-section ul { padding-left: 22px; margin: 0 0 14px; }
+.legal-section li { margin-bottom: 6px; }
+.legal-section a { color: var(--tally); border-bottom: 1px solid var(--tally); padding-bottom: 1px; }
+.legal-section a:hover { background: var(--tally); color: var(--paper); border-bottom-color: var(--tally); }
+.legal-section code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--paper-2);
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--rule-2);
+}
+.legal-section strong { font-weight: 600; }
+.legal-footer {
+  margin-top: clamp(56px, 7vw, 88px);
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Page-level header */
+.legal-mast {
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+}
+.legal-mast-rule { height: 4px; background: var(--ink); }
+.legal-mast-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.legal-mast-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1;
+  color: var(--ink);
+}
+</style>
+</head>
+<body>
+
+<header class="legal-mast">
+  <div class="legal-mast-rule"></div>
+  <div class="legal-mast-inner">
+    <a class="legal-mast-title" href="../">Standby Booth</a>
+    <button type="button" class="theme-toggle" id="theme-toggle"
+            aria-label="Toggle theme">
+      <svg class="theme-icon theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="theme-icon theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="legal-mast-rule" style="height: 1px;"></div>
+</header>
+
+<main class="legal-shell">
+  <a class="legal-back" href="../">← Back to home</a>
+
+  <p class="legal-eb">Legal · Terms</p>
+  <h1 class="legal-h1">Terms of <em>Use.</em></h1>
+  <p class="legal-meta">
+    <span>Effective: May 24, 2026</span>
+    <span>Version: 1.0</span>
+    <span>App: Standby Booth (iPadOS)</span>
+  </p>
+
+  <p class="legal-lede">
+    Standby Booth is a self-service video-booth app for iPad. These terms
+    are short on purpose. Read them once — they shouldn't surprise you.
+  </p>
+
+  <section class="legal-section">
+    <h2>Acceptance.</h2>
+    <p>
+      By downloading, installing, or using Standby Booth (the "app"), you
+      agree to these Terms of Use ("Terms"). If you do not agree, do not
+      use the app.
+    </p>
+    <p>
+      The app is published by Kai Ventures ("we", "us"). You can contact
+      a human at <a href="mailto:support@standbybooth.com">support@standbybooth.com</a>.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Apple's <em>standard EULA</em> applies.</h2>
+    <p>
+      Standby Booth is distributed through Apple's App Store. Your use of
+      the app is governed by Apple's
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">
+      Licensed Application End User License Agreement (Apple EULA)</a> in
+      addition to these Terms. Where these Terms and Apple's EULA differ,
+      Apple's EULA controls for any matter Apple addresses (license scope,
+      use rules, App Store mechanics, etc.).
+    </p>
+    <p>
+      These Terms add Standby Booth–specific commitments and disclaimers
+      on top of that baseline.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Your license.</h2>
+    <p>
+      Subject to your compliance with these Terms and Apple's EULA, we
+      grant you a personal, non-exclusive, non-transferable, revocable
+      license to install and use Standby Booth on Apple-branded iPads you
+      own or control.
+    </p>
+    <p>What you <strong>can</strong> do:</p>
+    <ul>
+      <li>Install the app on iPads associated with your Apple ID, subject to Apple's standard family-sharing and device-limit rules.</li>
+      <li>Use the app for personal or commercial events — weddings, brand activations, conferences, parties, anything.</li>
+      <li>Charge clients for events where you operate the booth. The app license is yours; the events you produce with it are yours.</li>
+    </ul>
+    <p>What you <strong>cannot</strong> do:</p>
+    <ul>
+      <li>Reverse-engineer, decompile, or attempt to extract source from the app, except where applicable law allows.</li>
+      <li>Resell, sublicense, rent, lease, or transfer the app to third parties.</li>
+      <li>Use the app to record people without their knowledge or consent — see the next section.</li>
+      <li>Bypass, modify, or remove the in-app purchase entitlement check or any other licensing mechanism.</li>
+    </ul>
+  </section>
+
+  <section class="legal-section">
+    <h2>Your responsibility as the <em>booth host.</em></h2>
+    <p>
+      Standby Booth is a tool for recording video of identifiable people.
+      You — the person setting up and operating the booth — are
+      responsible for:
+    </p>
+    <ul>
+      <li><strong>Consent.</strong> Anyone you record must know they're being recorded and must have agreed to it. Most jurisdictions require this; many require written consent for commercial use. Comply with the laws that apply to your event location and audience.</li>
+      <li><strong>Disclosure.</strong> The app's attract screen and recording UI make it visually obvious that a recording is happening. That is a starting point — not a substitute for proper signage, posted notices, or guest releases if your jurisdiction or use case requires them.</li>
+      <li><strong>Minors.</strong> If guests under the age of legal consent will use the booth, you are responsible for obtaining permission from a parent or guardian under the laws that apply.</li>
+      <li><strong>Subsequent use.</strong> Once a guest's recording is on your iPad, what you do with it is on you — sharing, broadcasting, editing, social media, commercial use, anything. These Terms do not authorize uses that violate the rights of the recorded individual.</li>
+      <li><strong>Storage and security.</strong> Recordings live on the iPad you control. Loss, theft, or unauthorized access to that iPad is your responsibility.</li>
+    </ul>
+  </section>
+
+  <section class="legal-section">
+    <h2>Pro Unlock — in-app purchase.</h2>
+    <p>
+      Standby Booth offers a one-time, non-consumable in-app purchase
+      called <strong>Standby Booth Pro</strong>, processed through Apple's
+      StoreKit. The purchase unlocks Premium features (longer recordings,
+      4K video, custom branding, USB-C storage, and more) on the Apple ID
+      that purchased it, in line with Apple's restoration and family-sharing
+      rules.
+    </p>
+    <p>
+      Apple — not Kai Ventures — handles payment, taxes, refunds, and
+      cross-device entitlement restoration. Refund requests must be made
+      through <a href="https://reportaproblem.apple.com/">Apple's
+      "Report a Problem" page</a>. We cannot reverse charges on your
+      behalf.
+    </p>
+    <p>
+      Pro Unlock is a one-time purchase. There is no auto-renewing
+      subscription. We may add new Premium features over time; we may also
+      reorganize which features are free and which are Premium. We will
+      not retroactively remove features from users who have already
+      purchased Pro Unlock.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Privacy.</h2>
+    <p>
+      Our <a href="../privacy/">Privacy Policy</a> describes what the app
+      does and does not do with information on your device. Short version:
+      the app has no backend, runs entirely on your iPad, and we collect
+      no data about you or your guests. Read the policy for the formal
+      version.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Disclaimer of warranties.</h2>
+    <p>
+      The app is provided <strong>as-is</strong> and <strong>as-available</strong>,
+      without warranty of any kind. To the maximum extent allowed by law,
+      we disclaim all warranties — express or implied — including
+      merchantability, fitness for a particular purpose, and
+      non-infringement.
+    </p>
+    <p>
+      We do not warrant that the app will be uninterrupted, error-free, or
+      that recordings will always save successfully. We strongly recommend
+      copying important recordings to a second device or drive on the
+      night of the event. Hardware can fail; iPads run out of storage;
+      cables get unplugged.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Limitation of liability.</h2>
+    <p>
+      To the maximum extent allowed by law, Kai Ventures will not be
+      liable for any indirect, incidental, special, consequential, or
+      punitive damages — including lost recordings, lost business, lost
+      revenue, or reputational harm — arising out of or related to your
+      use of the app, even if we have been advised of the possibility of
+      such damages.
+    </p>
+    <p>
+      Our total cumulative liability for any claim arising out of or
+      related to the app is limited to the amount you paid for Standby
+      Booth Pro (if any), or USD $29.99, whichever is less.
+    </p>
+    <p>
+      Some jurisdictions do not allow the exclusion or limitation of
+      certain damages. In those jurisdictions, our liability is limited to
+      the maximum extent permitted by law.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Indemnification.</h2>
+    <p>
+      You agree to defend, indemnify, and hold harmless Kai Ventures from
+      any claim, loss, or damage — including reasonable legal fees —
+      arising from your use of the app in violation of these Terms, your
+      violation of any law, or your violation of any third party's rights
+      (including the privacy or publicity rights of people you record).
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Termination.</h2>
+    <p>
+      You may stop using the app at any time by deleting it from your
+      iPad. We may suspend or terminate your license if you materially
+      violate these Terms. Termination does not entitle you to a refund
+      beyond what Apple's refund policies provide.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Changes to these Terms.</h2>
+    <p>
+      We may update these Terms from time to time. The effective date at
+      the top of this page will change. Material changes will be
+      announced in the app or on the
+      <a href="../">Standby Booth home page</a> before they take effect.
+      Continued use of the app after a material change means you accept
+      the updated Terms.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Governing law.</h2>
+    <p>
+      These Terms are governed by the laws of the State of California,
+      United States, without regard to its conflict-of-laws principles.
+      Any dispute arising out of or related to these Terms or the app
+      will be brought exclusively in the state or federal courts located
+      in San Francisco County, California, and you consent to that
+      jurisdiction.
+    </p>
+    <p>
+      Nothing in this section limits any non-waivable rights you may have
+      under the consumer-protection laws of your country of residence.
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Contact.</h2>
+    <p>
+      Questions about these Terms, the app, or anything else:
+      <a href="mailto:support@standbybooth.com">support@standbybooth.com</a>.
+      We read every reply.
+    </p>
+  </section>
+
+  <footer class="legal-footer">
+    <span>© 2026 Kai Ventures</span>
+    <span><a href="../">Standby Booth</a></span>
+  </footer>
+</main>
+
+<script>
+// Theme toggle — vanilla JS, matches the React ThemeToggle on the main page
+// and the toggle on /privacy/.
+(function () {
+  var btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  var sync = function () {
+    var dark = document.documentElement.dataset.theme === "dark";
+    btn.setAttribute("aria-pressed", String(dark));
+    btn.setAttribute("title", dark ? "Light mode" : "Dark mode");
+  };
+  sync();
+  btn.addEventListener("click", function () {
+    var next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("sb-theme", next); } catch (e) {}
+    var meta = document.getElementById("sb-theme-color");
+    if (meta) meta.setAttribute("content", next === "dark" ? "#14110D" : "#F5F1E8");
+    sync();
+  });
+})();
+</script>
+</body>
+</html>

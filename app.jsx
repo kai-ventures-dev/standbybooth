@@ -406,7 +406,7 @@ const Colophon = () => (
       </p>
       <ul className="colophon-links">
         <li><a href="privacy/">Privacy</a></li>
-        <li><a href="https://standbybooth.app/terms">Terms</a></li>
+        <li><a href="terms/">Terms</a></li>
       </ul>
     </div>
   </footer>
