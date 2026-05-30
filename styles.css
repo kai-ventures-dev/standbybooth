@@ -132,7 +132,17 @@ a { color: inherit; text-decoration: none; }
 .cover-cta-row {
   margin-top: 28px;
   display: flex; gap: 12px; flex-wrap: wrap;
+  align-items: center;
 }
+.appstore-badge {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.appstore-badge img { height: 46px; width: auto; display: block; }
+.appstore-badge .appstore-badge-dark { display: none; }
+[data-theme="dark"] .appstore-badge .appstore-badge-light { display: none; }
+[data-theme="dark"] .appstore-badge .appstore-badge-dark { display: block; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 14px 22px; font-size: 14px; font-weight: 500;

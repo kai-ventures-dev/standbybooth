@@ -118,6 +118,14 @@ const Cover = () => {
           <div className="cover-cta-row">
             <a className="btn btn-primary" href="#cases">See sample events</a>
             <a className="btn btn-ghost" href={SUPPORT_MAILTO}>Get in touch</a>
+            <a
+              className="appstore-badge"
+              href="https://apps.apple.com/us/app/standby-booth/id6761357439"
+              aria-label="Download Standby Booth on the App Store"
+            >
+              <img className="appstore-badge-light" src="assets/appstore-badge-black.svg" alt="Download on the App Store" />
+              <img className="appstore-badge-dark" src="assets/appstore-badge-white.svg" alt="Download on the App Store" />
+            </a>
           </div>
           <div className="cover-meta">
             <span>iPadOS 17+</span>
