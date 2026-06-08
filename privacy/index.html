@@ -49,6 +49,19 @@ fbq('track', 'PageView');
 })();
 </script>
 
+<!-- PostHog — same anonymous-pageview config as the home page. See the
+     "Website analytics" section below for what this collects and how to
+     opt out. -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_session_recording opt_out_session_recording has_opted_in_session_recording has_opted_out_session_recording".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_yd62Nhs7z5GS3E5GsdxGrULMS57psKCa2NNpsDB5qZ7W', {
+    api_host: 'https://us.i.posthog.com',
+    person_profiles: 'identified_only',
+    respect_dnt: true,
+    disable_session_recording: true
+});
+</script>
+
 <!-- Fonts (same set as the main page) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -227,15 +240,17 @@ src="https://www.facebook.com/tr?id=1280931707356419&ev=PageView&noscript=1"/>
   <p class="legal-eb">Legal · Privacy</p>
   <h1 class="legal-h1">Privacy <em>Policy.</em></h1>
   <p class="legal-meta">
-    <span>Effective: May 24, 2026</span>
-    <span>Version: 1.0</span>
+    <span>Effective: June 7, 2026</span>
+    <span>Version: 1.1</span>
     <span>App: Standby Booth (iPadOS)</span>
   </p>
 
   <p class="legal-lede">
-    Standby Booth is a zero-backend iPad app. We don't collect, store, or
-    transmit your data — because there's no place for us to send it. This
-    page formalizes that posture in plain language.
+    Standby Booth is a zero-backend iPad app. The app itself collects,
+    stores, and transmits nothing — there's no place for us to send it.
+    This website (standbybooth.com) uses a single anonymous analytics
+    tool for basic pageview counts; we disclose it below. This page
+    formalizes both postures in plain language.
   </p>
 
   <section class="legal-section">
@@ -262,17 +277,22 @@ src="https://www.facebook.com/tr?id=1280931707356419&ev=PageView&noscript=1"/>
   </section>
 
   <section class="legal-section">
-    <h2>What we don't collect.</h2>
-    <p>To be specific about the absence of data collection:</p>
+    <h2>What the app doesn't collect.</h2>
+    <p>To be specific about the absence of data collection in the iPad app:</p>
     <ul>
       <li>No personal information. We don't ask for your name, email, phone, address, or birthday.</li>
-      <li>No analytics. No Google Analytics, no Mixpanel, no Amplitude, no anonymous "we'd love to see how you use the app" pixels. None.</li>
+      <li>No in-app analytics. No Google Analytics, no Mixpanel, no Amplitude, no "we'd love to see how you use the app" pixels inside the app. None.</li>
       <li>No advertising IDs. We don't read your IDFA.</li>
       <li>No location data. The app never asks for location and never reads it.</li>
       <li>No contacts, calendars, or reminders.</li>
       <li>No device fingerprinting, no third-party tracking, no cross-app correlation.</li>
       <li>No remote logging. Crash reports stay on the device unless you choose to share them with Apple via the standard iOS setting.</li>
     </ul>
+    <p>
+      The website (standbybooth.com) has a separate, narrowly-scoped analytics setup
+      — described below in <strong>"Website analytics"</strong>. That tool runs only
+      in your browser when you visit this site; it never runs inside the iPad app.
+    </p>
   </section>
 
   <section class="legal-section">
@@ -342,12 +362,56 @@ src="https://www.facebook.com/tr?id=1280931707356419&ev=PageView&noscript=1"/>
   </section>
 
   <section class="legal-section">
+    <h2>Website analytics.</h2>
+    <p>
+      This website (standbybooth.com) uses
+      <a href="https://posthog.com/">PostHog</a> to understand basic
+      visitor patterns — which pages get visited, where visitors come from,
+      and roughly where in the world they are. We use it to know whether
+      anyone is reading the site. It runs only in your browser when you
+      load a page on this site; it does <strong>not</strong> run inside the
+      iPad app.
+    </p>
+    <h3>What PostHog collects on this website</h3>
+    <ul>
+      <li>Pageview events (the URL you visited, when, and the page that referred you, if any).</li>
+      <li>An anonymous, randomly-generated session ID stored in your browser to count return visits in aggregate.</li>
+      <li>Your browser type, operating system, and screen size — sent in standard HTTP headers.</li>
+      <li>Your IP address, which PostHog uses to derive a country/region and then discards. We never see or store the raw IP ourselves.</li>
+    </ul>
+    <h3>What PostHog does <em>not</em> collect on this website</h3>
+    <ul>
+      <li>No persistent user identity. We've configured PostHog with <code>person_profiles: 'identified_only'</code> and we never call <code>identify()</code>, which means PostHog never builds a profile tied to who you are.</li>
+      <li>No session replays, keystroke logging, mouse-movement recording, or DOM capture. We've disabled session recording entirely.</li>
+      <li>No cross-site tracking. The cookies/storage PostHog sets are scoped to <code>standbybooth.com</code>.</li>
+      <li>No advertising, no ad networks, no marketing pixels.</li>
+    </ul>
+    <h3>How to opt out</h3>
+    <p>
+      We honor the <strong>Do Not Track</strong> (DNT) browser signal. If
+      your browser sends DNT, PostHog will not collect anything on this site.
+      You can enable DNT in your browser's privacy settings.
+    </p>
+    <p>
+      You can also block <code>us.i.posthog.com</code> and
+      <code>us-assets.i.posthog.com</code> in your browser's content
+      blocker, or use any ad/tracker blocker (most block PostHog by default).
+      Blocking it has no effect on the site's functionality.
+    </p>
+  </section>
+
+  <section class="legal-section">
     <h2>Third parties.</h2>
     <p>
-      The app does not embed third-party SDKs at launch. If we add an
-      optional Google Drive storage destination in the future, signing into
-      Google Drive would trigger Google's SignIn SDK, and your interaction
-      with Google would be governed by
+      The app does not embed third-party SDKs at launch. The website embeds
+      one: PostHog, scoped narrowly as described above. PostHog's own
+      privacy policy is at
+      <a href="https://posthog.com/privacy">posthog.com/privacy</a>.
+    </p>
+    <p>
+      If we add an optional Google Drive storage destination in the future,
+      signing into Google Drive would trigger Google's SignIn SDK, and your
+      interaction with Google would be governed by
       <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
       We would only receive an OAuth token, stored in your iPad's Keychain,
       to write recordings into your own Drive folder.
