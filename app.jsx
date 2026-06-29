@@ -117,7 +117,6 @@ const Cover = () => {
           </p>
           <div className="cover-cta-row">
             <a className="btn btn-primary" href="#cases">See sample events</a>
-            <a className="btn btn-ghost" href={SUPPORT_MAILTO}>Get in touch</a>
             <a
               className="appstore-badge"
               href="https://apps.apple.com/us/app/standby-booth/id6761357439"
