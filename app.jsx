@@ -414,6 +414,13 @@ const Colophon = () => (
       <ul className="colophon-links">
         <li><a href="privacy/">Privacy</a></li>
         <li><a href="terms/">Terms</a></li>
+        {/* Clears the stored consent choice and re-opens the banner —
+            required "withdraw consent" path, any geo. */}
+        <li>
+          <button type="button" onClick={() => window.sbConsent && window.sbConsent.reset()}>
+            Privacy choices
+          </button>
+        </li>
       </ul>
     </div>
   </footer>
