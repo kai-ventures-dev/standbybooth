@@ -9,7 +9,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Standby Booth — Privacy Policy" />
-<meta property="og:description" content="No backend, no telemetry, no analytics. The privacy story in plain language." />
+<meta property="og:description" content="The iPad app is offline: no backend, no telemetry, no in-app analytics. The website's analytics are disclosed in full. The privacy story in plain language." />
 <meta property="og:image" content="../assets/hero-anywhere.png" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://standbybooth.com/privacy/" />
@@ -59,6 +59,16 @@ posthog.init('phc_yd62Nhs7z5GS3E5GsdxGrULMS57psKCa2NNpsDB5qZ7W', {
     respect_dnt: true,
     disable_session_recording: true
 });
+</script>
+
+<!-- Google Analytics 4 (gtag.js) — measurement ID G-0J3B4JVSWR.
+     Website-only (never in the iPad app). Disclosed in "Website analytics" below. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0J3B4JVSWR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0J3B4JVSWR');
 </script>
 
 <!-- Fonts (same set as the main page) -->
@@ -245,9 +255,10 @@ src="https://www.facebook.com/tr?id=1280931707356419&ev=PageView&noscript=1"/>
   <p class="legal-lede">
     Standby Booth is a zero-backend iPad app. The app itself collects,
     stores, and transmits nothing — there's no place for us to send it.
-    This website (standbybooth.com) uses a single anonymous analytics
-    tool for basic pageview counts; we disclose it below. This page
-    formalizes both postures in plain language.
+    This website (standbybooth.com) uses a few browser-based analytics and
+    ad-measurement tools for pageview counts and campaign measurement; we
+    disclose each one below. This page formalizes both postures in plain
+    language.
   </p>
 
   <section class="legal-section">
@@ -359,41 +370,66 @@ src="https://www.facebook.com/tr?id=1280931707356419&ev=PageView&noscript=1"/>
   </section>
 
   <section class="legal-section">
-    <h2>Website analytics.</h2>
+    <h2>Website analytics &amp; measurement.</h2>
     <p>
-      This website (standbybooth.com) uses
-      <a href="https://posthog.com/">PostHog</a> to understand basic
-      visitor patterns — which pages get visited, where visitors come from,
-      and roughly where in the world they are. We use it to know whether
-      anyone is reading the site. It runs only in your browser when you
-      load a page on this site; it does <strong>not</strong> run inside the
-      iPad app.
+      This website (standbybooth.com) uses three browser-based measurement
+      tools so we can understand how many people find the site, which pages
+      they read, and whether our ad campaigns are working. They run
+      <strong>only</strong> in your browser when you load a page on this
+      site; <strong>none of them run inside the iPad app</strong>, which
+      remains fully offline.
     </p>
-    <h3>What PostHog collects on this website</h3>
-    <ul>
-      <li>Pageview events (the URL you visited, when, and the page that referred you, if any).</li>
-      <li>An anonymous, randomly-generated session ID stored in your browser to count return visits in aggregate.</li>
-      <li>Your browser type, operating system, and screen size — sent in standard HTTP headers.</li>
-      <li>Your IP address, which PostHog uses to derive a country/region and then discards. We never see or store the raw IP ourselves.</li>
-    </ul>
-    <h3>What PostHog does <em>not</em> collect on this website</h3>
-    <ul>
-      <li>No persistent user identity. We've configured PostHog with <code>person_profiles: 'identified_only'</code> and we never call <code>identify()</code>, which means PostHog never builds a profile tied to who you are.</li>
-      <li>No session replays, keystroke logging, mouse-movement recording, or DOM capture. We've disabled session recording entirely.</li>
-      <li>No cross-site tracking. The cookies/storage PostHog sets are scoped to <code>standbybooth.com</code>.</li>
-      <li>No advertising, no ad networks, no marketing pixels.</li>
-    </ul>
+
+    <h3>1. PostHog — anonymous pageview analytics</h3>
+    <p>
+      <a href="https://posthog.com/">PostHog</a> tells us basic visitor
+      patterns — which pages get visited, referrers, and roughly which
+      country a visitor is in. It collects pageview events, an anonymous
+      randomly-generated session ID, your browser/OS/screen size, and your
+      IP address (used to derive a country/region, then discarded — we never
+      store the raw IP). We configure it with
+      <code>person_profiles: 'identified_only'</code> and never call
+      <code>identify()</code>, so it never builds a profile tied to who you
+      are; session recording, keystroke logging, and DOM capture are
+      disabled entirely; and it honors the Do Not Track signal.
+    </p>
+
+    <h3>2. Google Analytics 4 — aggregate traffic measurement</h3>
+    <p>
+      <a href="https://marketingplatform.google.com/about/analytics/">Google
+      Analytics</a> (gtag.js) gives us aggregate traffic and engagement
+      metrics (pageviews, sessions, scroll depth, approximate location from
+      IP, device and browser type). To do this it sets first-party cookies
+      scoped to standbybooth.com and generates a random client ID, and sends
+      this data to Google, whose handling is governed by
+      <a href="https://policies.google.com/privacy">Google's privacy
+      policy</a>. We do not link it to your name or any account, and we do
+      not use it to build advertising profiles of you.
+    </p>
+
+    <h3>3. Meta Pixel — ad measurement</h3>
+    <p>
+      The <a href="https://www.facebook.com/business/help/742478679120153">Meta
+      (Facebook) Pixel</a> lets us measure whether visits to this site came
+      from our Meta ad campaigns. It records a pageview event and may set
+      Meta cookies; the data it sends is governed by
+      <a href="https://www.facebook.com/privacy/policy/">Meta's privacy
+      policy</a> and may be used by Meta for ad measurement and targeting.
+      This is a marketing/advertising pixel — we use it solely to understand
+      campaign performance, not to identify individual visitors ourselves.
+    </p>
+
     <h3>How to opt out</h3>
     <p>
-      We honor the <strong>Do Not Track</strong> (DNT) browser signal. If
-      your browser sends DNT, PostHog will not collect anything on this site.
-      You can enable DNT in your browser's privacy settings.
-    </p>
-    <p>
-      You can also block <code>us.i.posthog.com</code> and
-      <code>us-assets.i.posthog.com</code> in your browser's content
-      blocker, or use any ad/tracker blocker (most block PostHog by default).
-      Blocking it has no effect on the site's functionality.
+      We honor the <strong>Do Not Track</strong> (DNT) browser signal for
+      PostHog. For all three tools, the most reliable opt-out is any
+      ad/tracker content blocker (most block Google Analytics, Meta Pixel,
+      and PostHog by default), disabling third-party cookies, or using
+      private/incognito browsing. You can also block the hosts directly:
+      <code>us.i.posthog.com</code>, <code>www.googletagmanager.com</code> /
+      <code>www.google-analytics.com</code>, and
+      <code>connect.facebook.net</code>. Blocking any or all of them has no
+      effect on the site's functionality.
     </p>
   </section>
 
@@ -401,9 +437,10 @@ src="https://www.facebook.com/tr?id=1280931707356419&ev=PageView&noscript=1"/>
     <h2>Third parties.</h2>
     <p>
       The app does not embed third-party SDKs at launch. The website embeds
-      one: PostHog, scoped narrowly as described above. PostHog's own
-      privacy policy is at
-      <a href="https://posthog.com/privacy">posthog.com/privacy</a>.
+      three, all described in <strong>"Website analytics &amp; measurement"</strong>
+      above: PostHog (<a href="https://posthog.com/privacy">posthog.com/privacy</a>),
+      Google Analytics (<a href="https://policies.google.com/privacy">Google's privacy policy</a>),
+      and the Meta Pixel (<a href="https://www.facebook.com/privacy/policy/">Meta's privacy policy</a>).
     </p>
     <p>
       If we add an optional Google Drive storage destination in the future,
