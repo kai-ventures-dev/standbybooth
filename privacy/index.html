@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Standby Booth — Privacy Policy</title>
-<meta name="description" content="Standby Booth is a zero-backend iPad app. We don't collect, store, or transmit your data. Here's the formal version." />
+<meta name="description" content="Standby Booth is a zero-backend iPad app. Your recordings and event content never leave the iPad. Anonymous usage analytics only — disclosed in full. Here's the formal version." />
 <meta name="theme-color" content="#F5F1E8" id="sb-theme-color" />
 
 <!-- Open Graph -->
@@ -211,21 +211,25 @@
   </p>
 
   <p class="legal-lede">
-    Standby Booth is a zero-backend iPad app. The app itself collects,
-    stores, and transmits nothing — there's no place for us to send it.
-    This website (standbybooth.com) uses a few browser-based analytics and
-    ad-measurement tools for pageview counts and campaign measurement; we
-    disclose each one below. This page formalizes both postures in plain
-    language.
+    Standby Booth is a zero-backend iPad app. Your recordings, event
+    configuration, and guest content never leave the iPad unless you share
+    them. As of version 1.3.2 the app includes one narrowly-scoped analytics
+    SDK (anonymous usage statistics, never your content — disclosed below),
+    and this website uses a few browser-based analytics and ad-measurement
+    tools. This page formalizes all of it in plain language.
   </p>
 
   <section class="legal-section">
     <h2>The <em>short version.</em></h2>
     <p>
       Standby Booth runs entirely on your iPad. We do not operate a server.
-      We do not run analytics SDKs. We do not embed advertising. We do not
-      collect telemetry. Recordings live on your device until you decide to
-      share them.
+      We do not embed advertising. Recordings live on your device until you
+      decide to share them. As of version 1.3.2 the app includes Google's
+      Firebase Analytics for anonymous usage statistics (which screens are
+      used, on what device model) so we can improve the app — it is never
+      linked to your identity, never used for ad tracking, and never touches
+      your recordings or event content. Details in
+      <strong>"In-app analytics"</strong> below.
     </p>
     <p>
       The rest of this page is the formal version — the same posture,
@@ -244,16 +248,28 @@
 
   <section class="legal-section">
     <h2>What the app doesn't collect.</h2>
-    <p>To be specific about the absence of data collection in the iPad app:</p>
+    <p>To be specific about data collection in the iPad app:</p>
     <ul>
       <li>No personal information. We don't ask for your name, email, phone, address, or birthday.</li>
-      <li>No in-app analytics. No Google Analytics, no Mixpanel, no Amplitude, no "we'd love to see how you use the app" pixels inside the app. None.</li>
-      <li>No advertising IDs. We don't read your IDFA.</li>
+      <li>No recordings or content ever leave the device through us. Guest videos, prompts, scripts, and event configuration are never uploaded to us or to any analytics tool.</li>
+      <li>No advertising IDs. We don't read your IDFA, and analytics is never used for ad tracking.</li>
       <li>No location data. The app never asks for location and never reads it.</li>
       <li>No contacts, calendars, or reminders.</li>
-      <li>No device fingerprinting, no third-party tracking, no cross-app correlation.</li>
-      <li>No remote logging. Crash reports stay on the device unless you choose to share them with Apple via the standard iOS setting.</li>
+      <li>No device fingerprinting, no cross-app tracking, no cross-app correlation.</li>
+      <li>No remote logging of your content. Crash reports stay on the device unless you choose to share them with Apple via the standard iOS setting.</li>
     </ul>
+    <h3>In-app analytics</h3>
+    <p>
+      As of version 1.3.2 the app includes
+      <a href="https://firebase.google.com/support/privacy">Google Firebase Analytics</a>
+      to collect anonymous usage statistics: which screens are visited, feature
+      usage counts, session length, device model, and OS version, keyed to a
+      random per-install identifier. It is configured with <strong>no advertising
+      features and no IDFA access</strong>; the data is "not linked to you" in
+      App Store privacy-label terms, is used only to understand which features
+      matter, and never includes recordings, prompts, scripts, or anything a
+      guest does in front of the camera.
+    </p>
     <p>
       The website (standbybooth.com) has a separate, narrowly-scoped analytics setup
       — described below in <strong>"Website analytics"</strong>. That tool runs only
@@ -400,7 +416,10 @@
   <section class="legal-section">
     <h2>Third parties.</h2>
     <p>
-      The app does not embed third-party SDKs at launch. The website embeds
+      The app embeds one third-party SDK: Google Firebase Analytics
+      (<a href="https://firebase.google.com/support/privacy">Firebase privacy
+      documentation</a>), scoped as described in <strong>"In-app
+      analytics"</strong> above. The website embeds
       three, all described in <strong>"Website analytics &amp; measurement"</strong>
       above: PostHog (<a href="https://posthog.com/privacy">posthog.com/privacy</a>),
       Google Analytics (<a href="https://policies.google.com/privacy">Google's privacy policy</a>),

@@ -162,7 +162,7 @@ const Ticker = () => {
   const items = [
     "ON AIR · STANDBY BOOTH",
     "ZERO BACKEND",
-    "ZERO TELEMETRY",
+    "ZERO ACCOUNTS",
     "ZERO SUBSCRIPTION",
     "FILES STAY ON DEVICE",
     "AIRDROP · USB-C",
