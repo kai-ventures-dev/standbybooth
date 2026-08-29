@@ -38,26 +38,37 @@ Read `00-index.md` first.
 
 ## Stack
 
-No build step. No package manager. Pure HTML, CSS, and ~30 lines of JS.
+No build step. No package manager. Pure HTML, CSS, and ~40 lines of JS.
 
-- `index.html` — single page, semantic HTML5
-- `styles.css` — design tokens + sections + responsive
-- `script.js` — copy-to-clipboard + chyron scroll state
-- `assets/icon-1024.png` — app icon
-- `og-image.png` — *(optional)* 1200×630 social card
+- `index.html` — single page, semantic HTML5 (four sections: cover, setup,
+  prompts, sign-off). Inline JS covers the theme toggle, the admin-panel
+  tabs, and the teleprompter crawl.
+- `styles.css` — design tokens + sections + responsive. `/privacy/` and
+  `/terms/` link it too, for the tokens, base type, and theme toggle.
+- `assets/consent.js` — Consent Mode v2 defaults, the EEA/UK banner, and the
+  consent-gated loaders for GA4, Meta Pixel, and PostHog. Every page loads it
+  synchronously in `<head>`; trackers never load on the legal pages.
+- `assets/fonts.css` + `assets/fonts/` — self-hosted webfonts.
+- `assets/attract-loop.mp4` — hero attract-screen loop (H.264, silent,
+  autoplay + `playsinline`), with `assets/attract-loop-poster.jpg` as poster.
+- `assets/icon-1024.png` — app icon, also the favicon.
+- `assets/hero-anywhere.png` — 1200×630 social card (`og:image`).
 
 Fonts: [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif),
 [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono),
-[Geist](https://vercel.com/font) — all loaded from CDNs at runtime.
+[Geist](https://vercel.com/font) — **self-hosted**, not loaded from a CDN.
+Serving them from fonts.googleapis.com would ship visitor IPs to Google
+before consent, so keep them local.
+
+`app.jsx`, `attract.jsx`, `brands.js`, and `admin-data.js` are the previous
+React build of this page. Nothing loads them any more; they are kept only for
+reference and can be deleted.
 
 ## Local development
 
-```sh
-# No server needed. Open in your browser:
-open index.html
-```
-
-If you want hot-reload, any static server works:
+Serve from the repo root — `consent.js` and `fonts.css` are referenced by
+root-absolute path (`/assets/...`), so opening `index.html` over `file://`
+loads the page without its fonts or consent layer.
 
 ```sh
 python3 -m http.server 8080
@@ -93,12 +104,9 @@ custom domain also unbreaks those.
 
 ## Editing copy
 
-Most copy lives in `index.html`. The free-vs-pro tier matrix mirrors
-`PaywallView.swift` in the app repo (`comparisonRows` const) — keep them in
-sync when changing tier definitions.
-
-The price string `$29.99` appears in two places (hero and pricing section).
-Search-and-replace if it changes.
+All copy lives in `index.html` — there is no data file to edit. The page
+carries no pricing and no tier matrix, so nothing here needs to stay in sync
+with `PaywallView.swift`.
 
 ## License
 
