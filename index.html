@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Standby Booth — Field Guide</title>
 <meta name="description" content="A self-service video booth for events. Configure once, walk away, come back to a folder full of clips. No backend. No cloud. No staff." />
 <meta name="theme-color" content="#F5F1E8" id="sb-theme-color" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Standby Booth — Field Guide" />
-<meta property="og:description" content="A self-service video booth for events. Same Attract template, six brand worlds." />
+<meta property="og:description" content="A self-service video booth for events. Motion attract screens, built-in teleprompter, fully offline." />
 <meta property="og:image" content="assets/hero-anywhere.png" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://standbybooth.com/" />
@@ -44,19 +44,310 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div id="root"></div>
 
-<!-- React + Babel from CDN. Pinned versions for predictable behavior. -->
-<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+<!-- ============================ MASTHEAD ============================ -->
+<header class="masthead">
+  <div class="mast-rule"></div>
+  <div class="mast-inner">
+    <span class="mast-issue">Vol. 01 · Issue 04 · Spring 2026</span>
+    <span class="mast-title">Standby Booth</span>
+    <div class="mast-right">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch theme" title="Switch theme">
+        <svg class="theme-icon theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="mast-rule" style="height:1px"></div>
+</header>
 
-<!-- Static data first (define globals on window). -->
-<script src="brands.js"></script>
-<script src="admin-data.js"></script>
+<!-- =========================== 1 · COVER =========================== -->
+<section class="cover">
+  <div class="cover-grid">
+    <div>
+      <p class="cover-eyebrow mono">
+        <span class="flag">New</span>
+        <span>Motion attract screens</span>
+        <span class="rule"></span>
+        <span>№ 01</span>
+      </p>
 
-<!-- JSX components. Babel transpiles at runtime. -->
-<script type="text/babel" data-presets="env,react" src="attract.jsx"></script>
-<script type="text/babel" data-presets="env,react" src="app.jsx"></script>
+      <h1 class="display cover-h1">An iPad,<br />your <em>booth.</em></h1>
+
+      <p class="cover-deck">
+        A self-service video booth for events. Guests walk up, tap once, and record
+        thirty seconds. You set it up in the morning and collect the clips at midnight.
+      </p>
+
+      <div class="cover-cta-row">
+        <a class="appstore-badge" href="https://apps.apple.com/us/app/standby-booth/id6761357439" aria-label="Download Standby Booth on the App Store">
+          <img class="badge-light" src="assets/appstore-badge-black.svg" alt="Download on the App Store" width="150" height="50" />
+          <img class="badge-dark" src="assets/appstore-badge-white.svg" alt="Download on the App Store" width="150" height="50" />
+        </a>
+      </div>
+
+      <div class="cover-meta">
+        <span>iPadOS 17+</span>
+        <span>Works fully offline</span>
+        <span>Files stay on device</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="cover-stage">
+        <div class="ipad">
+          <div class="ipad-screen">
+            <!-- Real attract-screen export. Muted + playsinline so iOS
+                 autoplays it inline instead of going fullscreen. -->
+            <video
+              class="attract-media"
+              src="assets/attract-loop.mp4"
+              poster="assets/attract-loop-poster.jpg"
+              autoplay muted loop playsinline preload="metadata"
+              aria-label="Attract screen: a wedding film on loop titled Elena and Marcus, with the prompt leave the newlyweds a note"
+            ></video>
+            <div class="screen-sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+      <p class="cover-caption">
+        <span class="new">New</span>
+        <span>Motion attract screens · your film, silent, on continuous loop</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TICKER ============================ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span><span class="ticker-dot"></span>ON AIR · STANDBY BOOTH</span>
+    <span><span class="ticker-dot"></span>ZERO BACKEND</span>
+    <span><span class="ticker-dot"></span>ZERO ACCOUNTS</span>
+    <span><span class="ticker-dot"></span>FILES STAY ON DEVICE</span>
+    <span><span class="ticker-dot"></span>AIRDROP · USB-C</span>
+    <span><span class="ticker-dot"></span>iPadOS 17+</span>
+    <span><span class="ticker-dot"></span>ON AIR · STANDBY BOOTH</span>
+    <span><span class="ticker-dot"></span>ZERO BACKEND</span>
+    <span><span class="ticker-dot"></span>ZERO ACCOUNTS</span>
+    <span><span class="ticker-dot"></span>FILES STAY ON DEVICE</span>
+    <span><span class="ticker-dot"></span>AIRDROP · USB-C</span>
+    <span><span class="ticker-dot"></span>iPadOS 17+</span>
+  </div>
+</div>
+
+<!-- ==================== 2 · HOOKS + ADMIN PANEL ==================== -->
+<section class="sec" id="setup">
+  <p class="feature-no">II · Set it up, walk away</p>
+  <h2 class="display sec-hd">Nothing to run. <em>Nothing to plug in.</em></h2>
+  <p class="sec-deck">The whole hardware list is an iPad and a stand. Everything else is a toggle behind a triple-tap and a four-digit PIN.</p>
+
+  <div class="split">
+    <ul class="hooks">
+      <li><span class="n">01</span><span>
+        <span class="h-t">No crew or attendants</span>
+        <span class="h-d">The booth greets, records, and thanks every guest by itself.</span>
+      </span></li>
+      <li><span class="n">02</span><span>
+        <span class="h-t">No Wi-Fi, no cloud</span>
+        <span class="h-d">Venue internet can drop all night. The booth never notices.</span>
+      </span></li>
+      <li><span class="n">03</span><span>
+        <span class="h-t">Buy it once, yours forever</span>
+        <span class="h-d">One purchase in the App Store. No subscription, no per-event fee.</span>
+      </span></li>
+      <li><span class="n">04</span><span>
+        <span class="h-t">No cables, no rig</span>
+        <span class="h-d">Nothing to tape down, nothing to trip over, nothing to pack.</span>
+      </span></li>
+      <li><span class="n">05</span><span>
+        <span class="h-t">Customized in under 60 seconds</span>
+        <span class="h-d">Names, logo, prompts, fonts, colors — set before the first guest arrives.</span>
+      </span></li>
+    </ul>
+
+    <div class="panel">
+      <div class="panel-bar">
+        <span class="ttl">Event setup</span>
+        <span class="pin">Triple-tap · 4-digit PIN</span>
+      </div>
+
+      <div class="panel-tabs" role="tablist" aria-label="Admin panel">
+        <button class="panel-tab" role="tab" id="t-event" aria-controls="p-event" aria-selected="true">01 · Event</button>
+        <button class="panel-tab" role="tab" id="t-loop" aria-controls="p-loop" aria-selected="false">02 · Video loop</button>
+        <button class="panel-tab" role="tab" id="t-brand" aria-controls="p-brand" aria-selected="false">03 · Brand</button>
+        <button class="panel-tab" role="tab" id="t-store" aria-controls="p-store" aria-selected="false">04 · Storage</button>
+      </div>
+
+      <div class="panel-body" id="p-event" role="tabpanel" aria-labelledby="t-event">
+        <div class="prow"><span class="k">Event name<small>Shown on the attract screen</small></span><span class="v">Elena &amp; Marcus</span></div>
+        <div class="prow"><span class="k">Recording length<small>Per guest</small></span><span class="v">00:30</span></div>
+        <div class="prow"><span class="k">Guest can retake<small>Preview before keeping</small></span><span class="sw" aria-hidden="true"></span></div>
+        <div class="prow"><span class="k">Kiosk lock<small>Guided access</small></span><span class="sw" aria-hidden="true"></span></div>
+        <p class="panel-foot"><b>0:47</b> · time to configure this event</p>
+      </div>
+
+      <div class="panel-body" id="p-loop" role="tabpanel" aria-labelledby="t-loop" hidden>
+        <div class="prow"><span class="k">Attract screen<small>What guests see while waiting</small></span><span class="chips"><span class="chip">Still</span><span class="chip on">Video loop</span></span></div>
+        <div class="prow"><span class="k">Loop playback<small>Silent, continuous</small></span><span class="sw" aria-hidden="true"></span></div>
+        <div class="upload">
+          <div class="u-top"><span class="u-name">elena-marcus-loop.mp4</span><span class="u-pct">Importing</span></div>
+          <div class="u-track"><i></i></div>
+        </div>
+        <p class="panel-foot">Imported from Photos or Files · <b>stays on device</b></p>
+      </div>
+
+      <div class="panel-body" id="p-brand" role="tabpanel" aria-labelledby="t-brand" hidden>
+        <div class="prow"><span class="k">Typeface<small>Headline and prompt</small></span><span class="chips"><span class="chip on">Cormorant</span><span class="chip">Geist</span><span class="chip">Mono</span></span></div>
+        <div class="prow"><span class="k">Palette<small>Background · text · accent</small></span><span class="chips"><span class="chip">#F4ECE0</span><span class="chip">#2A1F18</span><span class="chip on">#9B6A3F</span></span></div>
+        <div class="prow"><span class="k">Logo<small>PNG or SVG</small></span><span class="v">ellery-mark.svg</span></div>
+        <div class="prow"><span class="k">Guest prompt<small>Line under the name</small></span><span class="v">Leave the newlyweds a note</span></div>
+      </div>
+
+      <div class="panel-body" id="p-store" role="tabpanel" aria-labelledby="t-store" hidden>
+        <div class="prow"><span class="k">Save clips to<small>Destination</small></span><span class="chips"><span class="chip">Photos</span><span class="chip on">USB-C drive</span></span></div>
+        <div class="prow"><span class="k">Quality<small>Recorded on device</small></span><span class="v">1080p · 4K</span></div>
+        <div class="prow"><span class="k">Uploads to our servers<small>There are none</small></span><span class="sw off" aria-hidden="true"></span></div>
+        <div class="prow"><span class="k">Hand-off<small>End of night</small></span><span class="v">AirDrop · USB-C</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · TELEPROMPTER + OFFLINE PROCESSING ============ -->
+<section class="sec" id="prompts">
+  <p class="feature-no">III · Guests who freeze</p>
+  <h2 class="display sec-hd">A teleprompter, so nobody <em>blanks.</em></h2>
+  <p class="sec-deck">Most guests stall the second the countdown ends. Give them a line to read and you get a real thirty seconds — with nobody standing there coaching them.</p>
+
+  <div class="tele-grid">
+    <div class="prompter">
+      <div class="prompter-hud">
+        <span class="rec"><span class="d"></span>REC 00:12</span>
+        <span class="who">Teleprompter · wedding script</span>
+      </div>
+      <div class="crawl-mask">
+        <div class="crawl" id="crawl">
+          <p>Say your name and how you know the couple.</p>
+          <p>Tell us about the first time you met them.</p>
+          <p>What is the one thing you want them to remember?</p>
+          <p>Leave them a piece of marriage advice.</p>
+          <p>Finish with a toast.</p>
+        </div>
+      </div>
+      <div class="prompter-foot">
+        <span class="chip">Speed · slow</span>
+        <span class="chip">Text size · large</span>
+        <span class="chip on">+30s extension</span>
+      </div>
+    </div>
+
+    <div class="cards">
+      <article class="ucard">
+        <p class="u-k">Weddings</p>
+        <p class="u-q">"Leave the newlyweds a piece of marriage advice."</p>
+        <p class="u-b">Four prompts on a slow crawl. Guests read the first line, then keep talking past it.</p>
+      </article>
+      <article class="ucard">
+        <p class="u-k">Pop-ups &amp; brand activations</p>
+        <p class="u-q">"Show us your fit — thirty seconds, go."</p>
+        <p class="u-b">Turns a queue into usable footage. Every clip lands at the same length and framing.</p>
+      </article>
+      <article class="ucard">
+        <p class="u-k">Birthdays</p>
+        <p class="u-q">"Roast first. Toast second. No mercy."</p>
+        <p class="u-b">A script that gives permission. The awkward pause disappears.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="offline">
+    <h3>Everything renders <em>on the iPad.</em></h3>
+    <ul class="offline-list">
+      <li><span class="o-k">Processing</span><span class="o-v">Local, instant</span></li>
+      <li><span class="o-k">Network needed</span><span class="o-v">None, ever</span></li>
+      <li><span class="o-k">Clip lands on</span><span class="o-v">Photos or USB-C</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= 4 · SIGN OFF ======================= -->
+<section class="signoff" id="get">
+  <h2 class="signoff-h">Ready for your <em>next event?</em></h2>
+  <p class="signoff-p">Download it tonight, set it up in a minute, and let the booth run itself.</p>
+  <div class="signoff-cta">
+    <a class="appstore-badge" href="https://apps.apple.com/us/app/standby-booth/id6761357439" aria-label="Download Standby Booth on the App Store">
+      <img class="badge-light" src="assets/appstore-badge-black.svg" alt="Download on the App Store" width="150" height="50" />
+      <img class="badge-dark" src="assets/appstore-badge-white.svg" alt="Download on the App Store" width="150" height="50" />
+    </a>
+  </div>
+  <p class="signoff-mail"><a href="mailto:support@standbybooth.com?subject=Standby%20Booth">support@standbybooth.com</a></p>
+</section>
+
+<footer class="colophon">
+  <div class="colophon-inner">
+    <span style="font-family:var(--serif); font-style:italic; font-size:18px">Standby Booth</span>
+    <p class="colophon-meta">
+      <span>© 2026 Kai Ventures</span>
+      <span>·</span>
+      <span>Made on a Mac, with care.</span>
+    </p>
+    <ul class="colophon-links">
+      <li><a href="privacy/">Privacy</a></li>
+      <li><a href="terms/">Terms</a></li>
+      <li><button type="button" onclick="window.sbConsent &amp;&amp; window.sbConsent.reset()">Privacy choices</button></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+// Theme toggle — same behavior as v2, without React.
+(function () {
+  var btn = document.getElementById("themeToggle");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("sb-theme", next); } catch (e) {}
+    var meta = document.getElementById("sb-theme-color");
+    if (meta) meta.setAttribute("content", next === "dark" ? "#14110D" : "#F5F1E8");
+    btn.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
+  });
+})();
+
+// Admin panel tabs.
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".panel-tab"));
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () {
+      tabs.forEach(function (o) {
+        var on = o === t;
+        o.setAttribute("aria-selected", on ? "true" : "false");
+        document.getElementById(o.getAttribute("aria-controls")).hidden = !on;
+      });
+    });
+  });
+})();
+
+// Teleprompter — walk the highlighted line down the script.
+(function () {
+  var lines = Array.prototype.slice.call(document.querySelectorAll("#crawl p"));
+  if (!lines.length) return;
+  lines[0].classList.add("hot");
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var i = 0;
+  setInterval(function () {
+    lines[i].classList.remove("hot");
+    i = (i + 1) % lines.length;
+    lines[i].classList.add("hot");
+  }, 3400);
+})();
+</script>
+
 </body>
 </html>
