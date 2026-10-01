@@ -144,8 +144,40 @@
     gtag('config', 'G-0J3B4JVSWR');
   }
 
-  /* Meta Pixel — bootstrap snippet verbatim, then init + PageView. */
+  // Promotional pricing ends 9 Oct 2026. After PROMO_ENDS the standard price is
+  // used automatically — no redeploy needed.
+  // CONFIRMED by the owner: promo is valid THROUGH 9 Oct; standard pricing from
+  // 10 Oct. Set to 10 Oct 00:00 UTC. Do not change these numbers — if the App
+  // Store shows something different, ask rather than editing.
+  var PROMO_ENDS = Date.UTC(2026, 9, 10, 0, 0, 0);   // month is 0-indexed: 9 = October
+
+  var PRICING = {
+    '6794948298': { name: 'ClayPals: Toddler Puzzles',  promo: 1.99,  standard: 3.99  },
+    '6798962112': { name: 'ClayPals: Fruits & Veggies', promo: 1.99,  standard: 3.99  },
+    '6761357439': { name: 'Standby Booth',              promo: 14.99, standard: 29.99 }
+  };
+
+  function appInfo(id) {
+    var p = PRICING[id];
+    if (!p) return null;
+    return { name: p.name, value: Date.now() < PROMO_ENDS ? p.promo : p.standard };
+  }
+
+  /* Meta Pixel — bootstrap snippet verbatim, then init + PageView.
+     Only ever reached through loadAll(), i.e. the consent-granted path. */
   function loadMetaPixel() {
+    /* fbc — persist the ad-click id (?fbclid=) as _fbc before init so the
+       pixel can match conversions back to the click. Cleared on deny. */
+    (function () {
+      try {
+        var fbclid = new URLSearchParams(location.search).get('fbclid');
+        if (fbclid && document.cookie.indexOf('_fbc=') === -1) {
+          document.cookie = '_fbc=fb.1.' + Date.now() + '.' + fbclid +
+                            ';path=/;max-age=7776000;SameSite=Lax';
+        }
+      } catch (e) {}
+    })();
+
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -156,6 +188,24 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     window.fbq('init', '1280931707356419');
     window.fbq('track', 'PageView');
+
+    /* ViewContent on App Store link clicks — replaces the Event Setup Tool
+       rule, which could not send value/currency. loadAll() runs once per
+       page, so this listener is registered once. */
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('a[href*="apps.apple.com"]');
+      if (!a) return;
+      var eventId = 'vc-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+      var app = appInfo('6761357439');   // 14.99 now, 29.99 from 10 Oct
+      window.fbq('track', 'ViewContent', {
+        content_ids:  ['6761357439'],
+        content_name: app.name,
+        content_type: 'product',
+        value:        app.value,
+        currency:     'USD'
+      }, { eventID: eventId });
+      window.__lastViewContentEventId = eventId;
+    });
   }
 
   /* PostHog — snippet verbatim; anonymous pageview-only config:
@@ -281,7 +331,7 @@
   }
 
   /* -----------------------------------------------------------------
-     6. Best-effort cleanup on deny — expire _ga* / _fbp cookies across
+     6. Best-effort cleanup on deny — expire _ga* / _fbp / _fbc cookies across
      domain + path variants, and drop PostHog's ph_* localStorage keys.
      ----------------------------------------------------------------- */
   function expireCookie(name, domain) {
@@ -301,7 +351,8 @@
       var cookies = document.cookie ? document.cookie.split(';') : [];
       for (var i = 0; i < cookies.length; i++) {
         var name = cookies[i].split('=')[0].replace(/^\s+|\s+$/g, '');
-        if (name.indexOf('_ga') === 0 || name.indexOf('_fbp') === 0) {
+        if (name.indexOf('_ga') === 0 || name.indexOf('_fbp') === 0 ||
+            name.indexOf('_fbc') === 0) {
           for (var d = 0; d < domains.length; d++) expireCookie(name, domains[d]);
         }
       }
