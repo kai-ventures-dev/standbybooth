@@ -1,0 +1,15 @@
+FAIL crawler asset exists aeo.css
+FAIL crawler asset exists robots.txt
+FAIL crawler asset exists sitemap.xml
+FAIL crawler asset exists llms.txt
+FAIL crawler asset exists assets/og-image.jpg
+FAIL two valid JSON-LD blocks
+FAIL homepage canonical
+PASS consent layer preserved
+PASS self-hosted fonts preserved
+PASS Apple smart banner absent
+PASS removed QR sharing is not advertised
+FAIL free retakes match released app
+PASS privacy existing page preserved
+PASS terms existing page preserved
+RED: 8 structural failure(s)

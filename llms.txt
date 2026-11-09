@@ -1,0 +1,30 @@
+# Standby Booth
+
+> Standby Booth is an iPad app that turns an iPad into a self-service video booth and video guestbook for weddings, parties and brand events. It runs fully offline, keeps every clip on the device, and costs a one-time $29.99 for Pro, with no subscription.
+
+The host sets the iPad on a stand, names the event (Pro adds prompts, recording length, branding and where clips are saved), locks it and walks away. Guests walk up, tap once, record a message, review it and keep it or retake it. They never see settings or other files. During recording the screen's bright white margins act as a soft fill light on the guest's face.
+
+Standby Booth has no servers and no accounts. Recordings stay on the iPad (in Photos, or with Pro a Files folder) unless the host copies them to a USB-C drive or AirDrops them, a guest takes their own clip by AirDrop, or iCloud Photos syncs the Photos library. The app sends anonymous usage statistics (Firebase Analytics), never video or event content. It is published by Kai Ventures and is not related to Apple's StandBy mode.
+
+## Key facts
+- Platform: iPad only, iPadOS 17 or later (no iPhone, no Android)
+- Price: free download; Standby Booth Pro is a one-time $29.99 in-app purchase; no subscription, no per-event fee
+- Free: 60-second clips (fixed), 720p, up to 5 retakes per guest, as configured by the host, event name and background color, save to Photos, AirDrop, no watermark
+- Pro: clips up to 5 minutes, up to 4K, custom logo/fonts/colors, motion attract screen (looping video up to 15 seconds), guest prompts and teleprompter, Files folder + USB-C drive export, saved presets, on-iPad event stats, test mode
+- License (from the Terms): personal and commercial events, including charging clients; Pro restores on iPads using the buying Apple ID, under Apple's Family Sharing and device limits; refunds through Apple
+- Records with no Wi-Fi or internet
+- Kiosk lock: hidden triple-tap + 4-digit PIN, compatible with Guided Access
+- Language: English
+- Publisher: Kai Ventures
+- Support: support@standbybooth.com
+
+## Pages
+- [Home](https://standbybooth.com/): what it is, how setup works, teleprompter, pricing, comparison, FAQ
+- [FAQ](https://standbybooth.com/#faq): price, offline use, storage, devices, kiosk lock, exporting clips, commercial use, multiple iPads, StandBy confusion
+- [Download on the App Store](https://apps.apple.com/us/app/standby-booth/id6761357439)
+- [Instagram @standbybooth](https://www.instagram.com/standbybooth/)
+- [Facebook: Standby Booth](https://www.facebook.com/1204871456037821)
+
+## Optional
+- [Privacy policy](https://standbybooth.com/privacy/)
+- [Terms](https://standbybooth.com/terms/)

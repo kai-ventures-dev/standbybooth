@@ -1,0 +1,173 @@
+/* =====================================================================
+   Standby Booth: AEO additions (2026-10-29)
+   Loaded after styles.css. Uses the same tokens (paper, ink, tally, serif).
+   Adds: definition line, Pro tags, in-page nav, How it works, Pricing,
+   Comparison, FAQ, and the extended colophon.
+   ===================================================================== */
+
+/* Literal definition under the cover deck (Gate 3: "What is X" sentence) */
+.cover-define {
+  margin: 18px 0 0; max-width: 54ch;
+  font-size: 14px; line-height: 1.6; color: var(--ink-2);
+}
+.cover-define strong { font-weight: 500; }
+
+/* Apple trademarks keep their casing inside uppercase labels */
+.tm { text-transform: none; }
+/* no one-word widows in headlines and quotes */
+.sec-hd, .signoff-h, .offline h3, .ucard .u-q, .faq summary h3 { text-wrap: balance; }
+
+/* Social links live in the sign-off, not the crowded footer */
+.signoff-social {
+  margin: 22px 0 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 22px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2);
+}
+.signoff-social a {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px;
+  border: 1px solid var(--rule); color: var(--ink); transition: color 0.15s ease, border-color 0.15s ease;
+}
+.signoff-social > span { flex-basis: 100%; text-align: center; }
+.signoff-social a:hover { color: var(--tally); border-color: var(--tally); }
+
+/* Screen-reader-only text (table captions) */
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.sec-note {
+  margin: 18px 0 0; font-size: 14px; color: var(--ink-2); max-width: 52ch;
+}
+.sec-note a, .sec-deck a, .faq a, .colophon-about a {
+  border-bottom: 1px solid var(--rule); transition: color 0.15s ease, border-color 0.15s ease;
+}
+.sec-note a:hover, .sec-deck a:hover, .faq a:hover, .colophon-about a:hover { color: var(--tally); border-color: var(--tally); }
+
+/* Masthead: the name sits top left at every width (the live site hid it below 980px and led with an issue line) */
+.mast-inner { grid-template-columns: auto 1fr; }
+.mast-title { text-align: left; color: var(--ink); }
+
+/* In-page nav in the masthead (crawlable internal links) */
+.mast-nav { display: flex; gap: 18px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.mast-nav a { color: var(--ink-2); transition: color 0.15s ease; }
+.mast-nav a:hover { color: var(--tally); }
+
+/* ============== HOW IT WORKS ============== */
+.how-steps {
+  list-style: none; margin: 0; padding: 0; counter-reset: step;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 32px);
+  border-top: 1px solid var(--ink);
+}
+.how-steps li { counter-increment: step; padding-top: 18px; color: var(--ink-2); font-size: 15px; }
+.how-steps li::before {
+  content: "0" counter(step); display: block;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--tally); margin-bottom: 10px;
+}
+.how-steps strong {
+  display: block; font-family: var(--serif); font-weight: 400; color: var(--ink);
+  font-size: clamp(22px, 2.2vw, 28px); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 8px;
+}
+
+/* ============== PRICING / COMPARE (real HTML tables) ============== */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--ink); }
+.tiers, .compare { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tiers th, .tiers td, .compare th, .compare td {
+  text-align: left; padding: 14px 16px 14px 0; border-bottom: 1px solid var(--rule-2); vertical-align: top;
+}
+.tiers thead th, .compare thead th {
+  font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-2); border-bottom: 1px solid var(--rule);
+}
+.tiers thead th:last-child { color: var(--tally); }
+.tiers tbody th, .compare tbody th { font-weight: 400; color: var(--ink-2); }
+.tiers tbody td:nth-child(2), .tiers tbody td:nth-child(3) { font-family: var(--serif); font-size: 19px; }
+.tiers tbody td:last-child { color: var(--ink); }
+.compare { min-width: 640px; }
+.compare thead th:nth-child(2), .compare tbody td:nth-child(2) { color: var(--tally); }
+.compare tbody td:nth-child(2) { font-weight: 500; }
+:root { --aeo-tally-accessible: #B5381F; }
+
+/* light theme: #C9442C on paper is 4.29:1, below AA for small text; this is 5.25:1 */
+:root:not([data-theme="dark"]) .compare thead th:nth-child(2),
+:root:not([data-theme="dark"]) .compare tbody td:nth-child(2),
+:root:not([data-theme="dark"]) .tiers thead th:last-child { color: var(--aeo-tally-accessible); }
+.price-row { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--ink); margin: 0 0 clamp(26px, 3vw, 40px); }
+.price-row > div { flex: 1 1 220px; padding: 20px 22px; }
+.price-row > div + div { border-left: 1px solid var(--ink); }
+.price-row .p-k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); margin: 0; }
+.price-row .p-v { font-family: var(--serif); font-size: clamp(40px, 4.6vw, 64px); line-height: 1; margin: 10px 0 6px; }
+.price-row .p-v em { color: var(--tally); }
+.price-row .p-d { font-size: 14px; color: var(--ink-2); margin: 0; }
+.fineprint { margin: 16px 0 0; font-size: 13px; color: var(--ink-2); max-width: 70ch; }
+.inline-cta { margin-top: clamp(26px, 3vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.inline-cta p { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(18px, 1.6vw, 22px); color: var(--ink-2); }
+
+/* ============== FAQ (generated by tools/build_faq.py; do not hand-edit text) ============== */
+.faq .sec-hd { margin-bottom: clamp(30px, 4vw, 52px); }
+.faq details { border-top: 1px solid var(--rule); }
+.faq details:last-of-type { border-bottom: 1px solid var(--rule); }
+.faq summary {
+  list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 18px;
+  padding: 20px 0;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; margin-left: auto; font-family: var(--mono); font-size: 18px; color: var(--tally);
+  transition: transform 0.2s ease;
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq summary h3 {
+  margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(21px, 2.1vw, 28px); line-height: 1.2; letter-spacing: -0.01em;
+}
+.faq summary:hover h3 { color: var(--tally); }
+.faq details p { margin: 0 0 22px; max-width: 68ch; color: var(--ink-2); }
+
+/* ============== COLOPHON additions ============== */
+.colophon-about {
+  max-width: var(--max); margin: 0 auto 20px; padding: 0 var(--gutter);
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2);
+  display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; text-align: center;
+}
+
+.colophon-nav {
+  max-width: var(--max); margin: 0 auto 22px; padding: 0 var(--gutter);
+  display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: center;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.colophon-nav a:hover { color: var(--tally); }
+.colophon-links li { white-space: nowrap; }
+
+/* table swipe hint, shown only when the comparison table is wider than the screen */
+.scroll-hint { display: none; margin: 0 0 10px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 980px) {
+  .how-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mast-nav { display: none; }
+  .mast-inner { grid-template-columns: auto 1fr; }
+  .mast-title { display: block; }
+  /* touch: footer links get a 24px+ tap target */
+  .colophon-nav a, .colophon-links a, .colophon-links button, .signoff-mail a, .sec-note a { display: inline-block; padding: 6px 0; }
+}
+@media (max-width: 700px) {
+  .scroll-hint { display: block; }
+}
+/* phone held sideways: keep the headline, definition and App Store button on the first screen */
+@media (orientation: landscape) and (max-height: 520px) and (max-width: 980px) {
+  .cover { padding-top: 24px; padding-bottom: 32px; }
+  .cover-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 28px; align-items: start; }
+  .cover-eyebrow { display: none; }
+  .cover-h1 { font-size: clamp(44px, 7vw, 64px); }
+  .cover-deck { margin-top: 14px; font-size: 17px; }
+  .cover-define { margin-top: 10px; font-size: 13px; }
+  .cover-grid > div:first-child { display: flex; flex-direction: column; }
+  .cover-cta-row { margin-top: 14px; order: 4; }
+  .cover-define { order: 5; }
+  .cover-meta { margin-top: 18px; order: 6; }
+}
+@media (max-width: 620px) {
+  .about-sep { display: none; }
+  .how-steps { grid-template-columns: 1fr; }
+  .price-row > div + div { border-left: 0; border-top: 1px solid var(--ink); }
+  .tiers { font-size: 14px; }
+  .tiers tbody td:nth-child(2), .tiers tbody td:nth-child(3) { font-size: 16px; }
+}

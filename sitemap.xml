@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Add each new page (use-case pages, /faq/, /compare/) here when it goes live. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://standbybooth.com/</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://standbybooth.com/privacy/</loc></url>
+  <url><loc>https://standbybooth.com/terms/</loc></url>
+</urlset>
