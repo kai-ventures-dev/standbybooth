@@ -1,11 +1,12 @@
 # Standby Booth — landing page + product reference
 
-Single-page marketing site + a comprehensive product reference for
-[Standby Booth](https://standbybooth.app), a self-service video booth iPad
-app. Built as static HTML/CSS/JS, served via GitHub Pages.
+Standby Booth is a self-service video booth and video guestbook for iPad, built for weddings, parties, and brand events. Recording works offline; Pro is a one-time in-app purchase.
 
-**Live:** https://kai-ventures-dev.github.io/standbybooth/  
-*(or `https://standbybooth.app` once the custom domain is configured)*
+**Live:** https://standbybooth.com
+
+**App Store:** https://apps.apple.com/us/app/standby-booth/id6761357439
+
+Published by Kai Ventures. This repository contains the static GitHub Pages site and product reference.
 
 ---
 
@@ -90,9 +91,9 @@ Configure once: **Settings → Pages → Source → Deploy from a branch → mai
 
 ### Custom domain
 
-To wire up `standbybooth.app`:
+To wire up `standbybooth.com`:
 
-1. Add a `CNAME` file at the repo root with one line: `standbybooth.app`
+1. Add a `CNAME` file at the repo root with one line: `standbybooth.com`
 2. Configure DNS at the registrar:
    - `A` records → GitHub Pages IPs (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`)
    - `CNAME` for `www` → `kai-ventures-dev.github.io`
